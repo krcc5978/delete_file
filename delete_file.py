@@ -17,6 +17,9 @@ file = open('delete_file_name.txt', 'w')
 def delete_dir_list(path):
     files = os.listdir(path)
     files_dir = [f for f in files if os.path.isdir(os.path.join(path, f))]
+
+    # TODO ファイル用のメソッドの追加もする必要あり
+
     for i in files_dir:
         if re.fullmatch(args.delete_pattern, i):
             print('\\'.join([path, i]))
